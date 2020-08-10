@@ -7,7 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Checkbox from "@material-ui/core/Checkbox";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import InputBase from "@material-ui/core/InputBase";
+
+// todo: add makestyle for css
 
 function Content() {
   return (
@@ -40,32 +41,17 @@ function Content() {
                 }}
               >
                 <FormControlLabel
-                  control={
-                    <Checkbox
-                      name="completeChecked"
-                      // style={{ paddingLeft: "20px" }}
-                    />
-                  }
+                  control={<Checkbox name="completeChecked" />}
                   label="Bathing"
                 />
-                <br />
+
                 <FormControlLabel
-                  control={
-                    <Checkbox
-                      name="completeChecked"
-                      // style={{ paddingLeft: "20px" }}
-                    />
-                  }
+                  control={<Checkbox name="completeChecked" />}
                   label="Eating"
                 />
-                <br />
+
                 <FormControlLabel
-                  control={
-                    <Checkbox
-                      name="completeChecked"
-                      // style={{ paddingLeft: "20px" }}
-                    />
-                  }
+                  control={<Checkbox name="completeChecked" />}
                   label="Swimming"
                 />
               </div>
