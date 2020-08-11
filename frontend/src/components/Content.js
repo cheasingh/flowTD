@@ -7,8 +7,11 @@ import Typography from "@material-ui/core/Typography";
 import Checkbox from "@material-ui/core/Checkbox";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@material-ui/core/IconButton";
+import EditIcon from "@material-ui/icons/Edit";
 
-// todo: add makestyle for css
+// todo: change text box color for newTodo box
 
 function Content() {
   return (
@@ -35,25 +38,62 @@ function Content() {
               <div
                 style={{
                   display: "flex",
-                  alignContent: "center",
+                  flexWrap: "wrap",
                   flexDirection: "column",
                   paddingLeft: "20px",
                 }}
               >
-                <FormControlLabel
-                  control={<Checkbox name="completeChecked" />}
-                  label="Bathing"
-                />
+                {/* each task action */}
+                <div>
+                  <FormControlLabel
+                    control={<Checkbox name="completeChecked" />}
+                    label="Bathing"
+                    style={{ width: "248px" }}
+                  />
+                  <Typography variant="caption" display="inline" style={{}}>
+                    11 Aug 20
+                  </Typography>
+                  <IconButton>
+                    <EditIcon fontSize="small" />
+                  </IconButton>
+                  <IconButton color="secondary">
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                </div>
 
-                <FormControlLabel
-                  control={<Checkbox name="completeChecked" />}
-                  label="Eating"
-                />
+                <div>
+                  <FormControlLabel
+                    control={<Checkbox name="completeChecked" />}
+                    label="Eating"
+                    style={{ width: "248px" }}
+                  />
+                  <Typography variant="caption" display="inline" style={{}}>
+                    11 Aug 20
+                  </Typography>
+                  <IconButton>
+                    <EditIcon fontSize="small" />
+                  </IconButton>
+                  <IconButton color="secondary">
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                </div>
 
-                <FormControlLabel
-                  control={<Checkbox name="completeChecked" />}
-                  label="Swimming"
-                />
+                <div>
+                  <FormControlLabel
+                    control={<Checkbox name="completeChecked" />}
+                    label="Sleeping"
+                    style={{ width: "248px" }}
+                  />
+                  <Typography variant="caption" display="inline" style={{}}>
+                    11 Aug 20
+                  </Typography>
+                  <IconButton>
+                    <EditIcon fontSize="small" />
+                  </IconButton>
+                  <IconButton color="secondary">
+                    <DeleteIcon fontSize="small" />
+                  </IconButton>
+                </div>
               </div>
             </form>
           </CardContent>

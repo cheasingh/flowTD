@@ -1,17 +1,30 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Header from "./components/Header";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+
 import Home from "./pages/Home";
 
 function App() {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: prefersDarkMode ? "dark" : "light",
+        },
+      }),
+    [prefersDarkMode]
+  );
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
-        <Header />
         <Route exact path="/" component={Home} />
       </Router>
-    </div>
+    </ThemeProvider>
   );
 }
 
