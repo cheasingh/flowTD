@@ -1,8 +1,8 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
 import { GET_ALL_TASK, DELETE_TASK } from "../utils/gql";
-import { Button } from "antd";
-import { DeleteTwoTone } from "@ant-design/icons";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@material-ui/core/IconButton";
 
 function DeleteTask({ taskId }) {
   const [removeTaskMutation] = useMutation(DELETE_TASK, {
@@ -22,11 +22,9 @@ function DeleteTask({ taskId }) {
   };
 
   return (
-    <Button
-      type="text"
-      icon={<DeleteTwoTone twoToneColor="#ff0000" />}
-      onClick={onClick}
-    />
+    <IconButton onClick={onClick} color="secondary">
+      <DeleteIcon fontSize="small" />
+    </IconButton>
   );
 }
 
